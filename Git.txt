@@ -694,7 +694,13 @@ git rm --cached temp2.txt
  Note:
   used in .gitignore
   used to untracked file
-
+------------------------------------------------
+git rm -r --cached <directory>
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  delete directory in trach in repository
+  ***************************************
+  $ git rm -r --cached site1/apps/app3/__pycache__/
+  rm 'site1/apps/app3/__pycache__/__init__.cpython-310.pyc'
 ------------------------------------------------
 ------------------------------------------------
 rename
