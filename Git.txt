@@ -1789,6 +1789,110 @@ git flow release finish <nameBranch>
     - Release tag 'v-1.0.2' has been back-merged into 'develop'      
     - Release branch 'release/1.0.2' has been locally deleted
     - You are now on branch 'develop'
+------------------------------------------------
+publish
+------------------------------------------------
+git flow <command> publish <nameBranch>
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  publish==push process command
+  *****************************
+    $ git flow feature publish new-1
+    Enumerating objects: 39, done.
+    Counting objects: 100% (39/39), done.  
+    Delta compression using up to 4 threads
+    Compressing objects: 100% (24/24), done.
+    Writing objects: 100% (39/39), 3.50 KiB | 162.00 KiB/s, done.
+    Total 39 (delta 12), reused 0 (delta 0), pack-reused 0       
+    remote: Resolving deltas: 100% (12/12), done.
+    To https://github.com/meiadnoushadi/fortest.git
+    * [new branch]      feature/new-1 -> feature/new-1
+    branch 'feature/new-1' set up to track 'origin/feature/new-1'.
+    Already on 'feature/new-1'
+    Your branch is up to date with 'origin/feature/new-1'.
+
+    Summary of actions:
+    - The remote branch 'feature/new-1' was created or updated
+    - The local branch 'feature/new-1' was configured to track the remote branch
+    - You are now on branch 'feature/new-1'
+
+------------------------------------------------
+track
+------------------------------------------------
+git flow <command> track <nameBranch>
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  track==pull[fetch and merge] process command
+  ********************************************
+  NOTE:release and feature and hotfix
+    $ git flow feature track new-1
+    Switched to a new branch 'feature/new-1'
+    branch 'feature/new-1' set up to track 'origin/feature/new-1'.     
+
+    Summary of actions:
+    - A new remote tracking branch 'feature/new-1' was created
+    - You are now on branch 'feature/new-1'
+
+------------------------------------------------
+hotfix
+------------------------------------------------
+git flow hotfix start <nameBranch>
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  create branch for fix bug branch master
+  ***************************************
+    $ git flow hotfix start fix-url
+    1.0.4.1
+    Switched to a new branch 'hotfix/fix-url'
+
+    Summary of actions:
+    - A new branch 'hotfix/fix-url' was created, based on 'master'     
+    - You are now on branch 'hotfix/fix-url'
+
+    Follow-up actions:
+    - Start committing your hot fixes
+    - Bump the version number now!
+    - When done, run:
+
+        git flow hotfix finish 'fix-url'
+-------------------------------------
+git flow hotfix finish <nameBranch>
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  finish branch working and merge in master branch add delete branch hotfix
+  *************************************************************************
+    $ git flow hotfix finish fix-url
+    Switched to branch 'master'
+    Merge made by the 'ort' strategy.
+    file1.txt | 4 +++-
+    1 file changed, 3 insertions(+), 1 deletion(-)
+    Switched to branch 'develop'
+    Merge made by the 'ort' strategy.
+    file1.txt | 4 +++-
+    1 file changed, 3 insertions(+), 1 deletion(-)
+    Deleted branch hotfix/fix-url (was 5ec85cf).
+
+    Summary of actions:
+    - Hotfix branch 'hotfix/fix-url' has been merged into 'master'     
+    - The hotfix was tagged 'v-fix-url'
+    - Hotfix tag 'v-fix-url' has been back-merged into 'develop'       
+    - You are now on branch 'develop'
+    - Hotfix branch 'hotfix/fix-url' has been locally deleted
+------------------------------------------------
+support
+------------------------------------------------
+git flow support <nameTag> <nameBaseBranch>
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+  create one branch samller develop for version tag and merge to base branch
+  **************************************************************************
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
