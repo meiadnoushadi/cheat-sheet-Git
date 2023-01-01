@@ -1753,7 +1753,7 @@ miyaem va create release ro start mikonim
   1-test ok motaghim merge be master va develop emsme tag ham azat migire
   2-test not ok bad az commit merge mikonim be master va develop emsme tag ham azat migire
 -------------------------------------
-git flow release start <nameBranch>
+git flow release start <nameBranch(use to nameTag)>
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   start branch release az develop
   *******************************
@@ -1771,7 +1771,7 @@ git flow release start <nameBranch>
 
         git flow release finish '1.0.2'
 -------------------------------------
-git flow release finish <nameBranch>
+git flow release finish <nameBranch(use to nameTag)>
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   finish branch release and merge in develop and master and deleted branch release
   ********************************************************************************
@@ -1834,7 +1834,7 @@ git flow <command> track <nameBranch>
 ------------------------------------------------
 hotfix
 ------------------------------------------------
-git flow hotfix start <nameBranch>
+git flow hotfix start <nameBranch(use to nameTag)>
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   create branch for fix bug branch master
   ***************************************
@@ -1853,7 +1853,7 @@ git flow hotfix start <nameBranch>
 
         git flow hotfix finish 'fix-url'
 -------------------------------------
-git flow hotfix finish <nameBranch>
+git flow hotfix finish <nameBranch(use to nameTag)>
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   finish branch working and merge in master branch add delete branch hotfix
   *************************************************************************
