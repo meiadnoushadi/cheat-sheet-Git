@@ -1668,16 +1668,127 @@ alias
 ################################ Git flow ###############################
 #########################################################################
 
+------------------------------------------------
+------------------------------------------------
+initialize a repository
+------------------------------------------------
+------------------------------------------------
+git flow init
+^^^^^^^^^^^^^
+  start git flow in project
+  *************************
+$ git flow init
 
+    Which branch should be used for bringing forth production releases?
+      - master
+    Branch name for production releases: [master] 
+    Branch name for "next release" development: [develop] 
 
+    How to name your supporting branch prefixes?
+    Feature branches? [feature/] 
+    Bugfix branches? [bugfix/] 
+    Release branches? [release/] 
+    Hotfix branches? [hotfix/] bugfix
+    Support branches? [support/] 
+    Version tag prefix? [] v/
+    Hooks and filters directory? [E:/Desktop_file/file_Learn Git and Vim/GitHub_learnGIt/.git/hooks]
+------------------------------------------------
+option git flow
+------------------------------------------------
+git flow <command> [list]
+git flow <command> start
+git flow <command> finish
+git flow <command> publish
+git flow <command> track
+git flow <command> diff
+git flow <command> rebase
+git flow <command> checkout
+git flow <command> pull
+git flow <command> delete
 
+------------------------------------------------
+feature
+------------------------------------------------
+process:
+  git flow feature start <nameBranch>
+    working...
+  git flow feature end <nameBranch>
+-------------------------------------
+git flow feature start <nameBranch>
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  start feature working
+  *********************
+    $ git flow feature start new-feature-2
+    Switched to a new branch 'feature/new-feature-2'
 
+    Summary of actions:
+    - A new branch 'feature/new-feature-2' was created, based on 'develop'
+    - You are now on branch 'feature/new-feature-2'
 
+    Now, start committing on your feature. When done, use:
 
+        git flow feature finish new-feature-2
+-------------------------------------
+git flow feature finish <nameBranch>
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  finish feature working and deleted branch feature
+  *************************************************
+    $ git flow feature finish new-feature-2
+    Switched to branch 'develop'
+    Updating 4c5b12b..6189bf8
+    Fast-forward
+    file1.txt | 3 ++-
+    1 file changed, 2 insertions(+), 1 deletion(-)
+    Deleted branch feature/new-feature-2 (was 6189bf8).
 
+    Summary of actions:
+    - The feature branch 'feature/new-feature-2' was merged into 'develop'
+    - Feature branch 'feature/new-feature-2' has been locally deleted
+    - You are now on branch 'develop'
+------------------------------------------------
+release
+------------------------------------------------
+bad az merge feature be develop
+miyaem va create release ro start mikonim
+  1-test ok motaghim merge be master va develop emsme tag ham azat migire
+  2-test not ok bad az commit merge mikonim be master va develop emsme tag ham azat migire
+-------------------------------------
+git flow release start <nameBranch>
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  start branch release az develop
+  *******************************
+    $ git flow release start 1.0.2
+    Switched to a new branch 'release/1.0.2'
 
+    Summary of actions:
+    - A new branch 'release/1.0.2' was created, based on 'develop'   
+    - You are now on branch 'release/1.0.2'
 
+    Follow-up actions:
+    - Bump the version number now!
+    - Start committing last-minute fixes in preparing your release   
+    - When done, run:
 
+        git flow release finish '1.0.2'
+-------------------------------------
+git flow release finish <nameBranch>
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  finish branch release and merge in develop and master and deleted branch release
+  ********************************************************************************
+  NOTE:dar in marhale az shoma name tag ro ham miporse
+       va ta tag ro behesh nadi release ro anjam nemide
+    $ git flow release finish 1.0.2
+    Already on 'master'
+    Switched to branch 'develop'
+    Merge made by the 'ort' strategy.
+    Deleted branch release/1.0.2 (was e3b26ba).
+
+    Summary of actions:
+    - Release branch 'release/1.0.2' has been merged into 'master'   
+    - The release was tagged 'v-1.0.2'
+    - Release tag 'v-1.0.2' has been back-merged into 'develop'      
+    - Release branch 'release/1.0.2' has been locally deleted
+    - You are now on branch 'develop'
 
 
 
